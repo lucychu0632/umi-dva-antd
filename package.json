@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "localStart": "PROXY_ENV=http://192.168.0.120:8080 API_ENV=http://192.168.0.120:9001 umi dev",
+    "localStart1": "PROXY_ENV=http://127.0.0.1:8080 API_ENV=http://10.211.55.9:9001 umi dev",
+    "localBuild1": "BABEL_CACHE=none API_ENV=http://10.211.55.9:9001 umi build",
+    "localBuild": "API_ENV=http://192.168.0.120:9001 umi build",
+    "devBuild": "API_ENV=http://127.0.0.1:9001 umi build",
+    "testStart": "PROXY_ENV=https://shujin.yconsume.com API_ENV=https://test-api.yconsume.com  umi dev",
+    "testBuild": "BABEL_CACHE=none API_ENV=https://test-api.yconsume.com umi build",
+    "proBuild": "BABEL_CACHE=none API_ENV=https://api.yconsume.com umi build",
+    "test": "umi test",
+    "lint": "eslint --ext .js src mock tests",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-umi": "^0.1.5",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "umi": "^2.1.2",
+    "umi-plugin-react": "^1.1.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "less-vars-to-js": "^1.3.0"
+  }
+}
